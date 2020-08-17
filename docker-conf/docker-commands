@@ -1,0 +1,13 @@
+# From Laravel-app folder
+sudo docker run --rm -v $(pwd):/app composer install
+
+# Bulding the image and container
+sudo docker build . -t corvis
+sudo docker run -ti -p 80:80 -p 443:443 --name corvis-single \
+    --mount type=bind,source="$(pwd)",target=/var/www \
+    --mount type=bind,source="$(pwd)/public",target=/var/www/html \
+    --mount type=bind,source="/etc/nginx/ssl",target=/etc/nginx/ssl \
+    corvis
+
+sudo docker exec corvis-single php artisan key:generate
+sudo docker exec corvis-single php artisan config:cache

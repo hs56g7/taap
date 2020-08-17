@@ -1,0 +1,65 @@
+1. Create Azure VM (Ubuntu Linux) and SSH into it
+ssh < your user name >@< your public IP >
+
+2. Install docker
+sudo apt install docker.io
+
+3. Generate public key for your VM
+ssh-keygen
+
+4. Add access from your VM to your Azure DevOps so you can git pull your code
+more ~/.ssh/id_rsa.pub
+Copy and paste the key in SSH public keys in Azure DevOps
+(https://dev.azure.com/corvisnutrition/_usersSettings/keys)
+
+5. Get your source code using SSH (not https)
+git clone git@ssh.dev.azure.com:v3/corvisnutrition/CorvisNutrition/CorvisNutrition
+
+6. CD into your app root
+cd ./CorvisNutrition
+
+7. Copy environment variables if you don’t already have them
+cp .env.example .env
+
+DON’T EXECUTE THIS IF YOU ALREADY HAVE .env IN YOUR PROJECT
+
+8. Install app dependencies
+sudo docker run --rm -v $(pwd):/app composer install --ignore-platform-reqs
+
+9. Make sure the configuration files are in the root of your app.
+( docker-config folder and Dockerfile should be in CorvisNutrition folder)
+
+10. Build a docker image.
+sudo docker build . -t corvis
+
+Dev:
+
+docker run -d -p 8181:80 -p 4433:443 --name corvis --mount type=bind,source="$(pwd)",target=/var/www --mount type=bind,source="$(pwd)/public",target=/var/www/html corvis
+
+Production:
+
+sudo docker run -d -p 80:80 -p 443:443 --name corvis --mount type=bind,source="$(pwd)",target=/var/www --mount type=bind,source="$(pwd)/public",target=/var/www/html --mount type=bind,source="/etc/nginx/ssl",target=/etc/nginx/ssl corvis
+
+12. Create artisan key
+docker exec corvis php artisan key:generate
+
+13. Configure artisan cache
+docker exec corvis php artisan config:cache
+
+14. Assign permissions for www-data to own the storage folder:
+sudo chown -R www-data:www-data storage
+
+15. Check if all is working on your public IP. Go to http:// <your site public IP> /
+
+Log info:
+sudo docker logs corvis
+
+
+*******
+docker stop corvis
+docker rm corvis
+docker build . -t corvis --no-cache
+docker mount ...
+
+Server fix:
+php artisan optimize
