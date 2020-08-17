@@ -1,7 +1,33 @@
 .home-bg {
+    min-width: 100vw;
+    padding-bottom: 0px;
+}
+
+.home-logo {
     background-image: url(../../img/logo.jpg);
-    background-repeat: repeat;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 15vw;
+    width: 70vw;
+    height: calc(70vw * 0.5625);
+}
+
+@media (min-width: 767px) {
+    .home-img {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+}
+@media (min-width: 992px) {
+    .home-img {
+        padding-top: 300px;
+        padding-bottom: 300px;
+}
+
+.home-img {
+    padding-top: 350px;
+    padding-bottom: 350px;
 }
 
 .pointer {
