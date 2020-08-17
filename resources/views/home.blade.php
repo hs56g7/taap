@@ -50,91 +50,23 @@
             </div>
         	
             <div class="col-md-12">
-            
 				<div id="grandy-folio" class="cbp">
+
+				@foreach($categories as $category)
 					<div class="cbp-item branding col-md-4 col-sm-6 with-spacing">
 						<div class="portfolio gallery-image-hover text-center pointer">
+							<a href="{{ route('home') }}/report?category={{ $category->short_name }}">
 							<div class="folio-overlay"></div>
-							<img src="{{ asset('img/whitehouse.jpg') }}" alt="">
+							<img src='{{ asset("$category->img") }}' alt="">
 							<div class="portfolio-wrap">
-							<div class="portfolio-description">
-								<a href="{{ route('home') }}">
-									<h1 class="portfolio-title">White House</h1>
-								</a>
+								<div class="portfolio-description">
+									<h1 class="portfolio-title">{{ $category->name }}</h1>
+								</div>
 							</div>
-							</div>
+							</a>
 						</div>
 					</div>
-					
-					<div class="cbp-item branding col-md-4 col-sm-6 with-spacing">
-						<div class="portfolio gallery-image-hover text-center pointer">
-							<div class="folio-overlay"></div>
-							<img src="{{ asset('img/state.png') }}" alt="">
-							<div class="portfolio-wrap">
-							<div class="portfolio-description">
-								<a href="{{ route('home') }}">
-									<h1 class="portfolio-title">State Department</h1>
-								</a>
-							</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="cbp-item branding col-md-4 col-sm-6 with-spacing">
-						<div class="portfolio gallery-image-hover text-center pointer">
-							<div class="folio-overlay"></div>
-							<img src="{{ asset('img/justice.png') }}" alt="">
-							<div class="portfolio-wrap">
-							<div class="portfolio-description">
-								<a href="{{ route('home') }}">
-									<h1 class="portfolio-title">Justice Department</h1>
-								</a>
-							</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="cbp-item branding col-md-4 col-sm-6 with-spacing">
-						<div class="portfolio gallery-image-hover text-center pointer">
-							<div class="folio-overlay"></div>
-							<img src="{{ asset('img/treasury.jpg') }}" alt="">
-							<div class="portfolio-wrap">
-							<div class="portfolio-description">
-								<a href="{{ route('home') }}">
-									<h1 class="portfolio-title">Treasury</h1>
-								</a>
-							</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="cbp-item branding col-md-4 col-sm-6 with-spacing">
-						<div class="portfolio gallery-image-hover text-center pointer">
-							<div class="folio-overlay"></div>
-							<img src="{{ asset('img/commerce.png') }}" alt="">
-							<div class="portfolio-wrap">
-							<div class="portfolio-description">
-								<a href="{{ route('home') }}">
-									<h1 class="portfolio-title">Commerce Department</h1>
-								</a>
-							</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="cbp-item branding col-md-4 col-sm-6 with-spacing">
-						<div class="portfolio gallery-image-hover text-center pointer">
-							<div class="folio-overlay"></div>
-							<img src="{{ asset('img/homeland.png') }}" alt="">
-							<div class="portfolio-wrap">
-							<div class="portfolio-description">
-								<a href="{{ route('home') }}">
-									<h1 class="portfolio-title">Department of Homeland Security</h1>
-								</a>
-							</div>
-							</div>
-						</div>
-					</div>
+				@endforeach
 					
 				</div>
             

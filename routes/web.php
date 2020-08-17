@@ -14,3 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'RouteController@index')->name('home');
+
+Route::resource('/report', 'ReportController')->only(['index']);
+
+Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);

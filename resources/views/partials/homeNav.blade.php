@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbar-menu">
             <ul class="nav navbar-nav navbar-right" data-in="fadeIn" data-out="fadeOut">
                 <li><a class="logo logo-scroll" href="#home">Home</a></li>
-                <li><a class="logo logo-scroll" href="#feature">Reports</a></li>
+                <li><a class="logo logo-scroll" href="{{ route('report.index') }}">Reports</a></li>
                 <li><a class="logo logo-scroll" href="#feature">Login</a></li>
             </ul>
         </div>
