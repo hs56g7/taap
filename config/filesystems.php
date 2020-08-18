@@ -55,6 +55,18 @@ return [
             'visibility' => 'public',
         ],
 
+        'report_doc' => [
+            'driver'        => 'local',
+            'root'          => '/var/www/storage/reports/file/',
+            'visibility'    => 'private'
+        ],
+
+        'report_pdf' => [
+            'driver'        => 'local',
+            'root'          => '/var/www/storage/reports/pdf/',
+            'visibility'    => 'private'
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

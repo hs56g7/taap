@@ -7,7 +7,13 @@
         <div class="row">
             <div class="col-sm-12 col-md-4 mx-auto">
                 <h1>Upload Report</h1>
-                <form method="POST" action="{{ route('user.store') }}">
+                @if($errors->has('error'))
+                    <div class="alert alert-danger">
+                        {{ $errors->first('error') }}
+                    </div>
+                @endif
+                <form method="POST" action="{{ route('user.store') }}" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group my-8">
                         <label for="title">Title</label>
                         <input type="text" id="title" class="form-control" name="title" placeholder="Title" required>
@@ -27,7 +33,7 @@
                     </div>
                     <div class="form-group my-8">
                         <label for="text_file">Report Text (.txt File)</label>
-                        <input type="file" id="text_file" class="form-control" name="text_file" accept=".txt" required>
+                        <input type="file" id="text_file" class="form-control" name="text_file" accept=".rtf" required>
                     </div>
                     <div class="form-group my-8">
                         <label for="pdf_file">Report PDF</label>
