@@ -18,7 +18,6 @@
 
     @include('partials.userNav')
     @yield('content')
-    @include('partials.footer')
 
 </div>
 

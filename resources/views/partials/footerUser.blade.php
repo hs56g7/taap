@@ -1,5 +1,5 @@
 <!--=== Footer Start ===-->
-<footer class="footer dark-block" id="footer-fixed">
+<footer class="footer dark-block mt-8" id="footer-fixed">
     <div class="footer-copyright">
     <div class="container">
         <div class="row">
@@ -12,16 +12,6 @@
                     <li>info@taap2020.com</li>
                   </ul>
               </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-2">
-            <div class="widget widget-links">
-            	<h5 class="widget-title">Links</h5>
-                  <ul>
-                  	<li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('report.index') }}">Reports</a></li>
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                  </ul>
             </div>
           </div>
         </div>

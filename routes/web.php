@@ -24,11 +24,10 @@ Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);
 Route::get('verify/resend', 'Auth\TwoFactorController@resend')->name('verify.resend');
 Route::resource('verify', 'Auth\TwoFactorController')->only(['index', 'store']);
 
-Route::resource('user', 'UserController')->only(['index', 'store']);
+Route::resource('user', 'UserController')->middleware(['auth', 'twofactor'])->only(['index', 'create', 'store']);
 
 /**
  * Dev routes
- * 
  */
 
 Route::get('/hashPassword', 'RouteController@hash');

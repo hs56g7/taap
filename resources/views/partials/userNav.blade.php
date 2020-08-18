@@ -11,7 +11,16 @@
             </div>
         </div>
         <!--=== End Header Navigation ===-->
-        
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right" data-in="fadeIn" data-out="fadeOut">
+                <li class="home-nav-margin"><a class="logo logo-scroll" href="{{ route('user.index') }}">Dashboard</a></li>
+                <li class="home-nav-margin"><a class="logo logo-scroll" href="{{ route('user.create') }}">Add Report</a></li>
+                <li class="home-nav-margin"><a class="logo logo-scroll" href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">Logout</a></li>
+            </ul>
+        </div>
     </div>
+    <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
 </nav>
 <!--=== Header End ===-->

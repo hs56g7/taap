@@ -17,6 +17,14 @@
     margin-top: 10px;
 }
 
+.duke-bg {
+    background-color: #012169;
+}
+
+.white-bg {
+    background-color: #FFFFFF;
+}
+
 @media (min-width: 767px) {
     .home-img {
         padding-top: 200px;
