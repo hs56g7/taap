@@ -17,4 +17,18 @@ Route::get('/', 'RouteController@index')->name('home');
 
 Route::resource('/report', 'ReportController')->only(['index']);
 
+// only login and password reset
 Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);
+
+// 2FA routes
+Route::get('verify/resend', 'Auth\TwoFactorController@resend')->name('verify.resend');
+Route::resource('verify', 'Auth\TwoFactorController')->only(['index', 'store']);
+
+Route::resource('user', 'UserController')->only(['index', 'store']);
+
+/**
+ * Dev routes
+ * 
+ */
+
+Route::get('/hashPassword', 'RouteController@hash');

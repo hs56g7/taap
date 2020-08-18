@@ -13,7 +13,10 @@
 <!--=== Info Start ===-->
 <section id="pricing" style="padding-top:0px">
     <div class="container">
-      <div class="row">
+      	<div class="row">
+			<div class="col-12 text-center my-4" style="float:none">
+				<a href="{{ route('report.index') }}"><h1><span class="red-color">View All Reports</span></h1></a>
+			</div>
 			<div class="col-md-6 pricing-table">
 				<div class="pricing-box wow fadeInLeft" data-wow-delay="0.1s">
 					<h1><span>About</span></h1>
@@ -29,7 +32,7 @@
 					<h1><span>Featured Report</span></h1>
 					<h2 class="red-color"><span>Article Title</span></h2>
 					<h4>Article Category</h4>
-					<div class="pricing-box-bottom"> <a class="btn btn-red btn-md">Read More</a> </div>
+					<div class="pricing-box-bottom"> <a class="btn btn-red btn-md">Read</a> </div>
 				</div>
 			</div>
         </div>

@@ -12,15 +12,6 @@
         </div>
         <!--=== End Header Navigation ===-->
         
-        <!--=== Collect the nav links, forms, and other content for toggling ===-->
-        <div class="collapse navbar-collapse" id="navbar-menu">
-            <ul class="nav navbar-nav navbar-right" data-in="fadeIn" data-out="fadeOut">
-                <li class="home-nav-margin"><a class="logo logo-scroll" href="{{ route('home') }}">Home</a></li>
-                <li class="home-nav-margin"><a class="logo logo-scroll" href="{{ route('report.index') }}">Reports</a></li>
-                <li class="home-nav-margin"><a class="logo logo-scroll" href="{{ route('login') }}">Login</a></li>
-            </ul>
-        </div>
-        <!--=== /.navbar-collapse ===-->
     </div>
 </nav>
 <!--=== Header End ===-->
