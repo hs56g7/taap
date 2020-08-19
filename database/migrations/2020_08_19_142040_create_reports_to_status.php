@@ -15,6 +15,8 @@ class CreateReportsToStatus extends Migration
     {
         Schema::create('reports_to_status', function (Blueprint $table) {
             $table->id();
+            $table->integer('report_id');
+            $table->integer('status');
             $table->timestamps();
         });
     }

@@ -11,9 +11,7 @@ class RouteController extends Controller
 {
     public function index(Request $request)
     {
-        $categories = Categories::get();
-
-        return view('home', compact('categories'));
+        return view('home');
     }
 
     public function hash(Request $request)

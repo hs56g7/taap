@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 
 use App\Report;
 use App\Categories;
+use App\ReportToStatus;
 use App\AuthorsAndReports;
 
 class UserController extends Controller
@@ -47,13 +48,18 @@ class UserController extends Controller
 
         $pdf_path = $request->file('pdf_file')->store('public/report_pdf');
 
-        Report::insert([
+        $report_id = Report::insertGetId([
             'user_id'           => Auth::id(),
             'title'             => $request['title'],
             'description'       => $request['description'],
             'category_id'       => $request['category'],
             'text'              => $request['trumbowyg'],
             'pdf'               => $pdf_path,
+        ]);
+
+        ReportToStatus::insert([
+            'report_id'         => $report_id,
+            'status'            => 1,
         ]);
 
         return redirect()->route('user.index')->withSuccess('Upload Successful');

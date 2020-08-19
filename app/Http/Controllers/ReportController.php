@@ -15,7 +15,7 @@ class ReportController extends Controller
     {
         $categories = Categories::get();
 
-        $reports = AuthorsAndReports::get();
+        $reports = AuthorsAndReports::where('status', 1)->get();
 
         $authors = User::select('id', 'name')->get();
 
@@ -23,7 +23,10 @@ class ReportController extends Controller
 
         if(isset($request['author_id']))
         {
-            $reports = AuthorsAndReports::where('user_id', $request['author_id'])->get();
+            $reports = AuthorsAndReports::where([
+                ['user_id', $request['author_id']],
+                ['status', 1],
+            ])->get();
             $author_name = User::where('id', $request['author_id'])->value('name');
         }
 
