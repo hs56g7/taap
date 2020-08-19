@@ -39,32 +39,24 @@ class UserController extends Controller
             return redirect()->back()->withErrors(['error' => $msg]);
         }
 
-        if(!$request->hasFile('text_file'))
-        {
-            $msg = "Must upload a RTF version of the file";
-            return redirect()->back()->withErrors(['error' => $msg]);
-        }
-
         if(!$request->hasFile('pdf_file'))
         {
             $msg = "Must upload a PDF version of the file";
             return redirect()->back()->withErrors(['error' => $msg]);
         }
 
-        $txt_path = $request->file('text_file')->store('report_doc');
-
-        $pdf_path = $request->file('pdf_file')->store('report_pdf');
+        $pdf_path = $request->file('pdf_file')->store('public/report_pdf');
 
         Report::insert([
             'user_id'           => Auth::id(),
             'title'             => $request['title'],
             'description'       => $request['description'],
             'category_id'       => $request['category'],
-            'file'              => $txt_path,
+            'text'              => $request['trumbowyg'],
             'pdf'               => $pdf_path,
         ]);
 
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->withSuccess('Upload Successful');
     }
 
     protected function validateRequest(array $data)
@@ -73,6 +65,7 @@ class UserController extends Controller
             'title'             => 'required|string|max:100',
             'description'       => 'required|string|max:254',
             'category'          => 'required|integer|exists:categories,id',
+            'pdf_file'          => 'required|file|mimetypes:application/pdf',
         ]);
     }
 }
