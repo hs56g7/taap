@@ -32,7 +32,7 @@
 						<select name="author_id" class="form-control">
 							<option value="" selected disabled>Select Author</option>
 							@foreach($authors as $author)
-								<option value="{{ $author->id }}">{{ $author->name }}</option>
+								<option value="{{ $author->id }}">{{ $author->first_name . " " . $author->last_name }}</option>
 							@endforeach
 						</select>
 						<input class="form-control" type="submit" value="Submit">
@@ -60,10 +60,11 @@
 							<div class="folio-overlay"></div>
 							<img src='{{ asset("$report->img") }}' alt="">
 							<div class="portfolio-wrap-reports">
-							<div class="portfolio-description">
-								<h1 class="portfolio-title">{{ $report->title }}</h1>
-								<h3 class="portfolio-title">{{ $report->author }}</h3>
-							</div>
+								<div class="portfolio-description">
+									<h1 class="portfolio-title">{{ $report->title }}</h1>
+									<h3 class="portfolio-title">{{ $report->first_name . " " . $report->last_name }}</h3>
+									<p  class="portfolio-title">{{ $report->description }}</p>
+								</div>
 							</div>
 							</a>
 						</div>
