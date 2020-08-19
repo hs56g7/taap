@@ -25,6 +25,14 @@
     background-color: #FFFFFF;
 }
 
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
 @media (min-width: 767px) {
     .home-img {
         padding-top: 200px;

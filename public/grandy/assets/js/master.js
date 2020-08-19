@@ -37,7 +37,7 @@
 	/* ===== Fixed Footer ===== */
 	
 	var $window = $(window);
-	
+	/*
 	$('<div class="footer-height"></div>').insertAfter('#footer-fixed');
 	
 	$window.on('resize', function() {
@@ -48,7 +48,7 @@
 	  if ($('#footer-fixed').length) {
       
     }
-
+    */
     /* ===== COUNTERS ===== */
 
     $('.count').each(function () {

@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'RouteController@index')->name('home');
 
-Route::resource('/report', 'ReportController')->only(['index']);
+Route::resource('/report', 'ReportController')->only(['index', 'show']);
+
+Route::resource('/download', 'DownloadController')->only(['show']);
 
 // only login and password reset
 Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);

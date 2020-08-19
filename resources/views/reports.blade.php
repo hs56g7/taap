@@ -49,14 +49,14 @@
 
 		<div class="row">
         	
-            <div class="col-md-12">
+            <div class="col-sm-6 col-md-12">
             
 				<div id="grandy-folio" class="cbp">
 
 					@foreach($reports as $report)
 					<div class='cbp-item {{ $report->short_name }} col-md-4 col-sm-12 with-spacing'>
 						<div class="portfolio gallery-image-hover text-center pointer">
-							<a href="#">
+							<a href="{{ route('report.index') }}/{{ $report->report_id }}">
 							<div class="folio-overlay"></div>
 							<img src='{{ asset("$report->img") }}' alt="">
 							<div class="portfolio-wrap-reports">

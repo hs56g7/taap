@@ -37,4 +37,21 @@ class ReportController extends Controller
 
         return view('reports', compact('categories', 'reports', 'authors', 'author_name'));
     }
+
+    public function show(Request $request, $slug)
+    {
+        // check for valid report_id
+        $report_id = Report::where('id', $slug)->value('id');
+        
+        if($slug != $report_id)
+        {
+            return redirect()->route('report.index');
+        }
+
+        $text = Report::where('id', $report_id)->value('text');
+
+        $title = Report::where('id', $report_id)->value('title');
+
+        return view('viewReport', compact('text', 'title', 'report_id'));
+    }
 }
