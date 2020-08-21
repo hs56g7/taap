@@ -54,7 +54,7 @@ class UserController extends Controller
             return redirect()->back()->withErrors(['error' => $msg]);
         }
 
-        $pdf_path = $request->file('pdf_file')->store('public/report_pdf');
+        $pdf_path = $request->file('pdf_file')->store('report_pdf', 'azure');
 
         $report_id = Report::insertGetId([
             'user_id'           => Auth::id(),
@@ -176,7 +176,7 @@ class UserController extends Controller
         {
             $old_path = Report::where('id', $report_id)->value('pdf');
 
-            $pdf_path = $request->file('pdf_file')->store('public/report_pdf');
+            $pdf_path = $request->file('pdf_file')->store('report_pdf', 'azure');
 
             Report::where('id', $report_id)->update([
                 'pdf'           => $pdf_path,

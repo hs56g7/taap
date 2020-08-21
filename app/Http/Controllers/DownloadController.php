@@ -20,7 +20,6 @@ class DownloadController extends Controller
         }
 
         $pdf_path = Report::where('id', $report_id)->value('pdf');
-        $pdf_path = "/var/www/storage/app/" . $pdf_path;
 
         $title = Report::where('id', $report_id)->value('title');
 
@@ -29,6 +28,7 @@ class DownloadController extends Controller
             'Content-disposition'       => "attachment; filename='$title'",
         ];
 
-        return response()->download($pdf_path, $title, $headers);
+        // return response()->download($pdf_path, $title, $headers);
+        return Storage::disk('azure')->download($pdf_path, $title, $headers);
     }
 }
