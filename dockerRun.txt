@@ -29,7 +29,7 @@ sudo docker run --rm -v $(pwd):/app composer install --ignore-platform-reqs
 9. Make sure the configuration files are in the root of your app.
 ( docker-config folder and Dockerfile should be in CorvisNutrition folder)
 
-10. Build a docker image.
+10. Build a docker image
 sudo docker build . -t corvis
 
 Dev:
