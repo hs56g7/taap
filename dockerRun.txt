@@ -38,7 +38,7 @@ docker run -d -p 8282:80 -p 5533:443 --name taap --mount type=bind,source="$(pwd
 
 Production:
 
-sudo docker run -d -p 80:80 -p 443:443 --name corvis --mount type=bind,source="$(pwd)",target=/var/www --mount type=bind,source="$(pwd)/public",target=/var/www/html --mount type=bind,source="/etc/nginx/ssl",target=/etc/nginx/ssl corvis
+sudo docker run -d -p 80:80 -p 443:443 --name taap --mount type=bind,source="$(pwd)",target=/var/www --mount type=bind,source="$(pwd)/public",target=/var/www/html --mount type=bind,source="/etc/nginx/ssl",target=/etc/nginx/ssl taap
 
 12. Create artisan key
 docker exec corvis php artisan key:generate

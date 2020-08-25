@@ -812,8 +812,7 @@ nav.navbar.bootsnav.navbar-transparent.brand-center .navbar-brand {
 }
 
 .logo img {
-    max-height: 33px;
-	-webkit-transition: all .5s ease;
+	  -webkit-transition: all .5s ease;
     transition: all .5s ease;
     display: block;
 }

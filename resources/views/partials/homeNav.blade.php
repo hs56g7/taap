@@ -6,7 +6,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"> <i class="eicon ion-android-menu"></i> </button>
             <div class="logo logo-scroll">
                 <a href="{{ route('home') }}">
-                    <h2 class="logo logo-scroll" style="color:#000000">TAAP</h2>
+                    <img src="{{ asset('img/TAAP_SmallerLogo.svg') }}" class="logo logo-scroll" >
                 </a>
             </div>
         </div>
