@@ -35,6 +35,7 @@ sudo docker build . -t corvis
 Dev:
 
 docker run -d -p 8282:80 -p 5533:443 --name taap --mount type=bind,source="$(pwd)",target=/var/www --mount type=bind,source="$(pwd)/public",target=/var/www/html taap
+docker run -d -p 8282:80 -p 5533:443 --name taap --mount type=bind,source="$(pwd)",target=/var/www --mount type=bind,source="$(pwd)/public",target=/var/www/html --mount type=bind,source="$(pwd)/docker-conf/nginx/ssl",target=/etc/nginx/ssl taap
 
 Production:
 

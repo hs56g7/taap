@@ -15,7 +15,7 @@
     <div class="container">
       	<div class="row">
 			<div class="col-12 text-center my-6" style="float:none">
-<h1 style="background-color: #cb2d3e;" class="py-6 pointer"><span class="white-color" style="font-family: 'Playfair Display';" onclick="window.location.href={{ route('report.index') }}">View All Reports</span></h1>
+<h1 style="background-color: #cb2d3e;" class="py-6 pointer"><span class="white-color" style="font-family: 'Playfair Display';" onclick="window.location.href='{{ route('report.index') }}'">View All Reports</span></h1>
 			</div>
 			<div class="col-md-6 pricing-table">
 				<div class="pricing-box wow fadeInLeft" data-wow-delay="0.1s">

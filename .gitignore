@@ -11,3 +11,5 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 docker-conf/nginx/etc-nginx-conf-d/default.conf
+supervisor.log
+supervisor.pid
