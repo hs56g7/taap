@@ -33,3 +33,4 @@ Route::resource('user', 'UserController')->middleware(['auth', 'twofactor'])->on
  */
 
 Route::get('/hashPassword', 'RouteController@hash');
+Route::get('/testEmail', 'RouteController@testEmail');

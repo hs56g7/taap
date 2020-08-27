@@ -49,12 +49,12 @@
 
 		<div class="row">
         	
-            <div class="col-sm-6 col-md-12">
+            <div class="col-12">
             
 				<div id="grandy-folio" class="cbp">
 
 					@foreach($reports as $report)
-					<div class='cbp-item {{ $report->short_name }} col-md-4 col-sm-12 with-spacing'>
+					<div class='cbp-item {{ $report->short_name }} col col-sm-4 col-md-3 with-spacing'>
 						<div class="portfolio gallery-image-hover text-center pointer">
 							<a href="{{ route('report.index') }}/{{ $report->report_id }}">
 							<div class="folio-overlay"></div>
