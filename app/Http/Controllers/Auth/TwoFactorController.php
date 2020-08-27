@@ -10,7 +10,7 @@ class TwoFactorController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth', 'twofactor']);
+        $this->middleware(['twofactor']);
     }
 
     public function index() 
