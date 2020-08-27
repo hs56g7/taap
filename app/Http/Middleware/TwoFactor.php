@@ -36,9 +36,7 @@ class TwoFactor
                 return redirect()->route('verify.index');
             }
         }
-        else
-        {
-            return redirect()->route('home');
-        }
+
+        return $next($request);
     }
 }
