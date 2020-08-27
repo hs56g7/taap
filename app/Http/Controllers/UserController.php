@@ -22,7 +22,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $user_id = Auth::id();
-
+        
         $reports = AuthorsAndReports::where('user_id', $user_id)->select('report_id', 'title', 'name', 'status')->get();
 
         return view('user.dashboard', compact('reports'));

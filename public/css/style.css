@@ -21,6 +21,11 @@
     background-color: #012169;
 }
 
+span.duke-text {
+    color: #012169 !important;
+    font-weight: 600;
+}
+
 .white-bg {
     background-color: #FFFFFF;
 }

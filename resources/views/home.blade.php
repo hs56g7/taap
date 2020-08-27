@@ -20,7 +20,7 @@
 			<div class="col-md-6 pricing-table">
 				<div class="pricing-box wow fadeInLeft" data-wow-delay="0.1s">
 					<h1><span>Featured Report</span></h1>
-					<h2 class="red-color"><span>Article Title</span></h2>
+					<h2><span class="duke-text">Article Title</span></h2>
 					<h4>Article Category</h4>
 					<div class="pricing-box-bottom"> <a class="btn btn-red btn-md">Read</a> </div>
 				</div>
@@ -28,7 +28,7 @@
 			<div class="col-md-6 pricing-table">
 				<div class="pricing-box wow fadeInRight" data-wow-delay="0.1s">
 					<h1><span>About</span></h1>
-					<h2 class="red-color"><span>We are a group of students at Duke University School of Law documenting instances where the Trump Administration may have violated the law.</span></h3>
+					<h3><span class="duke-text">We are a group of students at Duke University School of Law documenting instances where the Trump Administration may have violated the law.</span></h3>
 					<!--<div class="pricing-box-bottom">
 						<a class="btn btn-red btn-md">Contact</a>
 					</div>-->

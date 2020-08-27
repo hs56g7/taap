@@ -23,14 +23,15 @@ Route::resource('/download', 'DownloadController')->only(['show']);
 Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);
 
 // 2FA routes
-Route::get('verify/resend', 'Auth\TwoFactorController@resend')->name('verify.resend');
-Route::resource('verify', 'Auth\TwoFactorController')->only(['index', 'store']);
+Route::get('verify/resend', 'Auth\TwoFactorController@resend')->middleware(['auth'])->name('verify.resend');
+Route::resource('verify', 'Auth\TwoFactorController')->middleware(['auth'])->only(['index', 'store']);
 
 Route::resource('user', 'UserController')->middleware(['auth', 'twofactor'])->only(['index', 'create', 'store', 'show', 'edit', 'update']);
 
 /**
  * Dev routes
  */
-
+/*
 Route::get('/hashPassword', 'RouteController@hash');
 Route::get('/testEmail', 'RouteController@testEmail');
+*/
