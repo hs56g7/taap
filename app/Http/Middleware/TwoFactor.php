@@ -36,7 +36,7 @@ class TwoFactor
                 return redirect()->route('verify.index');
             }
         }
-        dd('twoFactor middleware');
+        
         return $next($request);
     }
 }
