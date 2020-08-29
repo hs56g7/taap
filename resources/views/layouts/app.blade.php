@@ -1,3 +1,6 @@
+<?php
+header("X-Frame-Options: $x_frame");
+?>
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>

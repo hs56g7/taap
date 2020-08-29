@@ -5550,7 +5550,7 @@ button:focus {
 }
 
 section.dark-block .team-member-container .member-caption, section.dark-block .portfolio .folio-overlay {
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
 section.dark-block .team-slider .slick-dots li.slick-active button, section.dark-block .blog-slider .slick-dots li.slick-active button,  section.dark-block .portfolio-slider .slick-dots li.slick-active button {

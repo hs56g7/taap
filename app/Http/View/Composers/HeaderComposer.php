@@ -23,7 +23,7 @@ class HeaderComposer
     public function compose(View $view)
     {
         $x_frame = "deny";
-
+        
         $view->with('x_frame', $x_frame);
     }
 }

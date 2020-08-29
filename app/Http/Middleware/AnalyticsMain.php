@@ -17,7 +17,7 @@ class AnalyticsMain
     public function handle($request, Closure $next)
     {
         View::share('APP_ENV', config('app.env'));
-
+        
         return $next($request);
     }
 }

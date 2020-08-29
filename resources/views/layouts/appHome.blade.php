@@ -1,4 +1,6 @@
-
+<?php
+header("X-Frame-Options: $x_frame");
+?>
 <!doctype html>
 <html>
 @include('partials.head')
