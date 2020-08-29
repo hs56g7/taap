@@ -55,7 +55,7 @@ class UserController extends Controller
         }
         
         $pdf_path = $request->file('pdf_file')->store('report_pdf', 'azure');
-        dd('here');
+        
         $report_id = Report::insertGetId([
             'user_id'           => Auth::id(),
             'title'             => $request['title'],
