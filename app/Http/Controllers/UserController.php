@@ -53,9 +53,9 @@ class UserController extends Controller
             $msg = "Must upload a PDF version of the file";
             return redirect()->back()->withErrors(['error' => $msg]);
         }
-        dd('here');
+        
         $pdf_path = $request->file('pdf_file')->store('report_pdf', 'azure');
-
+        dd('here');
         $report_id = Report::insertGetId([
             'user_id'           => Auth::id(),
             'title'             => $request['title'],
