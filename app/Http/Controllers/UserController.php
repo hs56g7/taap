@@ -33,7 +33,7 @@ class UserController extends Controller
         $categories = Categories::select('id', 'name')->get();
 
         $authors = Author::select('id', 'first_name', 'last_name')->get();
-        
+        dd('here');
         return view('user.createReport', compact('categories', 'authors'));
     }
 
