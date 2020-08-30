@@ -13,3 +13,4 @@ yarn-error.log
 docker-conf/nginx/etc-nginx-conf-d/default.conf
 supervisord.log
 supervisord.pid
+storage/debugbar
