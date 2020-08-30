@@ -5,7 +5,7 @@
 <section id="current_reports" class="duke-bg">
     <div class="container white-bg">
         <div class="row">
-            <div class="col-sm-12 col-md-6 mx-auto">
+            <div class="col-sm-12 col-md-8 mx-auto">
                 @if(session('success'))
                     <div class="mt-4 alert alert-success">
                         {{ session('success') }}
@@ -25,6 +25,7 @@
                             <th scope="col">Category</th>
                             <th scope="col">Status (Click to Change)</th>
                             <th scope="col">Edit (Click to Access)</th>
+                            <th scope="col">Featured (Click to Change)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,6 +40,11 @@
                                     <td><a href="{{ route('user.index') }}/{{ $report->report_id }}">Hidden</td>
                                 @endif
                                 <td><a href="{{ route('user.index') }}/{{ $report->report_id }}/edit">Edit</td>
+                                @if($report->report_id == $featured_report)
+                                    <td>Current</td>
+                                @else
+                                    <td><a href="{{ route('featuredReport.show', ['featuredReport' => $report->report_id]) }}">Designate</a></td>
+                                @endif
                             </tr>
                         @endforeach
                     </tbody>

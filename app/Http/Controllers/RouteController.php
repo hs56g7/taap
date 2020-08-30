@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Report;
 use App\Categories;
+use App\FeaturedReport;
 
 use Mail;
 
@@ -13,7 +15,15 @@ class RouteController extends Controller
 {
     public function index(Request $request)
     {
-        return view('home');
+        $report_id = FeaturedReport::where('id', 1)->value('report_id');
+
+        $title = Report::where('id', $report_id)->value('title');
+
+        $category_id = Report::where('id', $report_id)->value('category_id');
+
+        $category = Categories::where('id', $category_id)->value('name');
+
+        return view('home', compact('title', 'category', 'report_id'));
     }
 
     public function hash(Request $request)

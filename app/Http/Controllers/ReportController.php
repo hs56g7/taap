@@ -14,28 +14,27 @@ class ReportController extends Controller
 {
     public function index(Request $request)
     {
-        $categories = Categories::get();
-
+        $category_ids = AuthorsAndReports::where('status', 1)->pluck('category_id');
+        
+        $categories = Categories::whereIn('id', $category_ids)->get();
+        
         $reports = AuthorsAndReports::where('status', 1)->get();
 
         $authors = Author::select('id', 'first_name', 'last_name')->get();
 
-        $author_name = "";
+        $filter = "";
 
-        if(isset($request['author_id']))
+        if(isset($request['filter']))
         {
-            $reports = AuthorsAndReports::where([
-                ['author_id', $request['author_id']],
-                ['status', 1],
-            ])->get();
-            
-            $fname = Author::where('id', $request['author_id'])->value('first_name');
-            $lname = Author::where('id', $request['author_id'])->value('last_name');
+            $filter_check = Categories::where('short_name', $request['filter'])->value('id');
 
-            $author_name = "$fname $lname";
+            if($filter_check > 0 && isset($filter_check))
+            {
+                $filter = Categories::where('short_name', $request['filter'])->value('short_name');
+            }
         }
 
-        return view('reports', compact('categories', 'reports', 'authors', 'author_name'));
+        return view('reports', compact('categories', 'reports', 'filter'));
     }
 
     public function show(Request $request, $slug)

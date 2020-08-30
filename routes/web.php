@@ -28,6 +28,8 @@ Route::resource('verify', 'Auth\TwoFactorController')->only(['index', 'store']);
 
 Route::resource('user', 'UserController')->middleware(['auth', 'twofactor'])->only(['index', 'create', 'store', 'show', 'edit', 'update']);
 
+Route::resource('featuredReport', 'FeaturedReportController')->middleware(['auth', 'twofactor'])->only('show');
+
 /**
  * Dev routes
  */

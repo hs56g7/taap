@@ -16,7 +16,13 @@
         <div class="collapse navbar-collapse" id="navbar-menu">
             <ul class="nav navbar-nav navbar-right" data-in="fadeIn" data-out="fadeOut">
                 <li class="home-nav-margin"><a class="logo logo-scroll" href="{{ route('home') }}">Home</a></li>
-                <li class="home-nav-margin"><a class="logo logo-scroll" href="{{ route('report.index') }}">Reports</a></li>
+                <li class="dropdown home-nav-margin"> <a href="{{ route('report.index') }}" class="logo logo-scroll dropdown-toggle" data-toggle="dropdown">Reports</a>
+                    <ul class="dropdown-menu">
+                        @foreach($report_categories as $report_category)
+                            <li><a href="{{ route('report.index') }}?filter={{ $report_category->short_name }}"><h4>{{ $report_category->name }}</h4></a></li>
+                        @endforeach
+                    </ul>
+                </li>
                 <li class="home-nav-margin"><a class="logo logo-scroll" href="{{ route('login') }}">Login</a></li>
             </ul>
         </div>

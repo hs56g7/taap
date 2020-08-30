@@ -1,4 +1,4 @@
-@extends('layouts.appHome', ['title' => 'TAAP'])
+@extends('layouts.appHome', ['title' => 'Reports - TAAP'])
 
 @section('content')
   
@@ -6,7 +6,7 @@
 <section class="white-bg dark-block">
   	<div class="container">
     	<div class="row">
-			<div class="col-sm-6">
+			<div class="col-12">
 				<div class="col-md-12 mt-10">
 					<h2 class="text-uppercase font-700 source-font text-center mb-10">Reports</h2>
 				</div>
@@ -17,34 +17,13 @@
 						All 
 					</div>
 					@foreach($categories as $category)
-						<div data-filter=".{{ $category->short_name }}" class="cbp-filter-item">
+						<div id="{{ $category->short_name }}" data-filter=".{{ $category->short_name }}" class="cbp-filter-item">
 							{{ $category->name }}
 						</div>
 					@endforeach
 				</div>
 				</div>
 			</div>
-			<div class="col-sm-6">
-				<div class="col-sm-12 col-md-6 mt-10 mx-auto" style="float:none;">
-					<h2 class="text-uppercase font-700 source-font text-center mb-10">Filter by Author</h2>
-					<form method="GET" action="{{ route('report.index') }}">
-						@csrf
-						<select name="author_id" class="form-control">
-							<option value="" selected disabled>Select Author</option>
-							@foreach($authors as $author)
-								<option value="{{ $author->id }}">{{ $author->first_name . " " . $author->last_name }}</option>
-							@endforeach
-						</select>
-						<input class="form-control" type="submit" value="Submit">
-					</form>
-				</div>
-			</div>
-			@if($author_name != "")
-				<div class="col-sm-12 text-center">
-					<h2 class="text-uppercase font-700 source-font text-center red-color">Showing Reports by: {{ $author_name }}</h2>
-					<a href="{{  route('report.index') }}"><button class="btn btn-rounded btn-lg btn-color">Reset</button></a>
-				</div>
-			@endif
 		</div>
 
 		<div class="row">
@@ -62,7 +41,6 @@
 							<div class="portfolio-wrap-reports">
 								<div class="portfolio-description">
 									<h1 class="portfolio-title">{{ $report->title }}</h1>
-									<h3 class="portfolio-title">{{ $report->first_name . " " . $report->last_name }}</h3>
 									<p  class="portfolio-title">{{ $report->description }}</p>
 								</div>
 							</div>
@@ -77,8 +55,29 @@
             
         </div>
     </div>
-  </section>
-   
-  <!--=== Portfolio End ===-->
+</section>
 
-  @endsection
+<!--=== Portfolio End ===-->
+
+@endsection
+
+@section('js')
+
+<script>
+
+	var filter = '{{ $filter }}';
+	
+	var filterReports = setInterval(function(){
+		if($('#loader-overlay').is(':hidden'))
+		{
+			$('#' + filter).click();
+			let stateObj = { id: "100" }; 
+            window.history.replaceState(stateObj, 
+                        "Reports", "/report"); 
+			clearInterval(filterReports);
+		}
+	}, 500);
+
+</script>
+
+@endsection

@@ -11,6 +11,7 @@ use App\JWT;
 use App\Report;
 use App\Author;
 use App\Categories;
+use App\FeaturedReport;
 use App\ReportToStatus;
 use App\AuthorsToReports;
 use App\AuthorsAndReports;
@@ -25,7 +26,9 @@ class UserController extends Controller
         
         $reports = AuthorsAndReports::where('user_id', $user_id)->select('report_id', 'title', 'name', 'status')->get();
 
-        return view('user.dashboard', compact('reports'));
+        $featured_report = FeaturedReport::where('id', 1)->value('report_id');
+
+        return view('user.dashboard', compact('reports', 'featured_report'));
     }
 
     public function create(Request $request)

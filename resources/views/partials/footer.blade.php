@@ -5,7 +5,6 @@
 		<div class="row">
 			<div class="col-sm-6 col-md-4">
 			<div class="widget widget-text">
-				<div class="logo logo-footer"><a href="index.html"> <img class="logo logo-display" src="assets/images/logo-footer-light.png" alt=""></a> </div>
 				<div class="widget-links">
 					<ul>
 					<li>Duke Law School Address</li>
