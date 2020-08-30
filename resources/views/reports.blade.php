@@ -76,7 +76,7 @@
                         "Reports", "/report"); 
 			clearInterval(filterReports);
 		}
-	}, 500);
+	}, 1000);
 
 </script>
 
