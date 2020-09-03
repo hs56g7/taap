@@ -37,4 +37,3 @@ Route::resource('featuredReport', 'FeaturedReportController')->middleware(['auth
 Route::get('/hashPassword', 'RouteController@hash');
 Route::get('/testEmail', 'RouteController@testEmail');
 */
-Route::get('/hashPassword', 'RouteController@hash');
