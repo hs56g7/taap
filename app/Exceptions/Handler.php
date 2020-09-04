@@ -67,26 +67,11 @@ class Handler extends ExceptionHandler
         {
             $user_id = 0;
             $user_type = "";
-
+            
             if(Auth::check())
             {
                 $user_id = Auth::id();
-                $user_type = "Road Delivery";
-            }
-            else if(Auth::guard('cafe_user')->check())
-            {
-                $user_id = Auth::guard('cafe_user')->id();
-                $user_type = "Cafe User";
-            }
-            else if(Auth::guard('cafe_manager')->check())
-            {
-                $user_id = Auth::guard('cafe_manager')->id();
-                $user_type = "Cafe Manager";
-            }
-            else if(Auth::guard('home_delivery_customer')->check())
-            {
-                $user_id = Auth::guard('home_delivery_customer')->id();
-                $user_type = "Home Delivery";
+                $user_type = "User";
             }
             
             $class          = get_class($exception);
@@ -98,11 +83,11 @@ class Handler extends ExceptionHandler
             $data           = implode($request->all());
             $url            = $request->url();
             $method         = $request->method();
-
+            
             /**
              * Skip logging and alerting for all 400-level errors
              */
-            dd($exception, $this->isHttpException($exception));
+            
             if($this->isHttpException($exception) == false)
             {
                 LERN::insert([
@@ -149,6 +134,7 @@ class Handler extends ExceptionHandler
         else
         {
             // for dev
+            
             if($this->isHttpException($exception))
             {
                 switch (intval($exception->getStatusCode()))
