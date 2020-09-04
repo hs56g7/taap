@@ -148,6 +148,21 @@ class Handler extends ExceptionHandler
         }
         else
         {
+            if($this->isHttpException($exception))
+            {
+                switch (intval($exception->getStatusCode()))
+                {
+                    // not found, redirect to home
+                    case 404:
+                        return redirect('/');
+                        break;
+                    // method not allowed, redirect to home
+                    case 405:
+                        return redirect('/');
+                        break;
+                }
+            }
+
             // for dev
             return parent::render($request, $exception);
         }
