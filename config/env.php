@@ -9,6 +9,7 @@ return [
     |
     */
 
+    'APP_ENV'                                   => env('APP_ENV'),
     'secret_key'                                => env('secret_key'),
 
 ];

@@ -102,7 +102,7 @@ class Handler extends ExceptionHandler
             /**
              * Skip logging and alerting for all 400-level errors
              */
-            dd($exception, $this->isHttpException($exception));
+            
             if($this->isHttpException($exception) == false)
             {
                 LERN::insert([
