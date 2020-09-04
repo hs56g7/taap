@@ -65,7 +65,6 @@ class Handler extends ExceptionHandler
     {
         if(config('env.APP_ENV') == 'production')
         {
-            dd('true');
             $user_id = 0;
             $user_type = "";
 
