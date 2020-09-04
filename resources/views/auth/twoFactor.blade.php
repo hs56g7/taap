@@ -12,7 +12,7 @@
                         </p>
                     @endif
                     <form method="POST" action="{{ route('verify.store') }}">
-                        {{ csrf_field() }}
+                        @csrf
                         <h1>Two Factor Verification</h1>
                         <p class="text-muted">
                             You have received an email which contains two factor login code.
