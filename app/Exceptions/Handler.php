@@ -63,9 +63,9 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        dd($exception, $this->isHttpException($exception), config('env.APP_ENV') == 'production');
         if(config('env.APP_ENV') == 'production')
         {
+            dd('true');
             $user_id = 0;
             $user_type = "";
 
