@@ -15,6 +15,7 @@ class RouteController extends Controller
 {
     public function index(Request $request)
     {
+        dfghj
         $report_id = FeaturedReport::where('id', 1)->value('report_id');
 
         $title = Report::where('id', $report_id)->value('title');

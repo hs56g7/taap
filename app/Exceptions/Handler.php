@@ -102,7 +102,7 @@ class Handler extends ExceptionHandler
             /**
              * Skip logging and alerting for all 400-level errors
              */
-
+            
             if($this->isHttpException($exception) === false)
             {
                 LERN::insert([
@@ -148,6 +148,7 @@ class Handler extends ExceptionHandler
         }
         else
         {
+            // for dev
             if($this->isHttpException($exception))
             {
                 switch (intval($exception->getStatusCode()))
@@ -163,7 +164,6 @@ class Handler extends ExceptionHandler
                 }
             }
 
-            // for dev
             return parent::render($request, $exception);
         }
     }
