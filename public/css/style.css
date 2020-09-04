@@ -38,6 +38,31 @@ span.duke-text {
     float: right;
 }
 
+/**
+    sizing for report headers
+*/
+.report-title-font {
+    font-size: 36px;
+}
+@media (min-width: 750px) {
+    .report-title-font {
+        font-size: 20px;
+    }
+}
+@media (min-width: 1201px) {
+    .report-title-font {
+        font-size: 30px;
+    }
+}
+@media (min-width: 1500px) {
+    .report-title-font {
+        font-size: 36px;
+    }
+}
+
+/**
+    home padding
+*/
 @media (min-width: 767px) {
     .home-img {
         padding-top: 200px;
@@ -48,6 +73,7 @@ span.duke-text {
     .home-img {
         padding-top: 300px;
         padding-bottom: 300px;
+    }
 }
 
 .home-img {

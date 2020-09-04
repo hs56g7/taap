@@ -40,7 +40,7 @@
 							<img src='{{ asset("$report->img") }}' alt="">
 							<div class="portfolio-wrap-reports">
 								<div class="portfolio-description">
-									<h1 class="portfolio-title">{{ $report->title }}</h1>
+									<h1 class="portfolio-title report-title-font">{{ $report->title }}</h1>
 									<p  class="portfolio-title">{{ $report->description }}</p>
 								</div>
 							</div>
