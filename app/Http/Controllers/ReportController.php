@@ -14,7 +14,6 @@ class ReportController extends Controller
 {
     public function index(Request $request)
     {
-        dfghj
         $category_ids = AuthorsAndReports::where('status', 1)->pluck('category_id');
         
         $categories = Categories::whereIn('id', $category_ids)->get();
