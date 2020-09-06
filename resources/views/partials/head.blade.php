@@ -31,20 +31,14 @@
 <meta property="og:url" content="{{ $report_url ?? config('env.APP_URL_SHORT') }}">
 <meta property="og:title" content="{{ $title ?? 'TAAP'}}">
 <meta property="og:description" content="{{ $description ?? 'We are a group of law students based at Duke University documenting instances where the Trump Administration may have violated the law. Accountability matters, and no one is above the law.' }}">
-<meta property="og:image" content="{{ asset('img/TAAP_FullLogo.PNG') }}">
+<meta property="og:image" content="{{ asset('img/TAAP_FullLogo.png') }}">
 
 <!-- Twitter -->
-<!--<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="{{ $report_url ?? config('env.APP_URL_SHORT') }}">
-<meta property="twitter:title" content="{{ $title ?? 'TAAP'}}">
-<meta property="twitter:description" content="{{ $description ?? 'We are a group of law students based at Duke University documenting instances where the Trump Administration may have violated the law. Accountability matters, and no one is above the law.' }}">
-<meta property="twitter:image" content="{{ asset('img/TAAP_FullLogo.PNG') }}">-->
-
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@taap2020">
 <meta name="twitter:url" content="{{ $report_url ?? config('env.APP_URL_SHORT') }}">
 <meta name="twitter:title" content="{{ $title ?? 'TAAP'}}">
 <meta name="twitter:description" content="{{ $description ?? 'We are a group of law students based at Duke University documenting instances where the Trump Administration may have violated the law. Accountability matters, and no one is above the law.' }}">
-<meta name="twitter:image" content="{{ asset('img/TAAP_FullLogo.PNG') }}">
+<meta name="twitter:image" content="{{ asset('img/TAAP_FullLogo.png') }}">
 
 </head>
