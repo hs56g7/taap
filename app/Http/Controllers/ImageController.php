@@ -19,5 +19,7 @@ class ImageController extends Controller
 
             return response()->download('/var/www/public/img/TAAP_FullLogo.png', $title, $headers);
         }
+
+        return redirect()->route('home');
     }
 }
