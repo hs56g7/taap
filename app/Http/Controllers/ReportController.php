@@ -51,6 +51,8 @@ class ReportController extends Controller
 
         $title = Report::where('id', $report_id)->value('title');
 
-        return view('viewReport', compact('text', 'title', 'report_id'));
+        $description = Report::where('id', $report_id)->value('description');
+
+        return view('viewReport', compact('text', 'title', 'report_id', 'description'));
     }
 }
