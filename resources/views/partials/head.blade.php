@@ -24,7 +24,7 @@
 <!-- Primary Meta Tags -->
 <title>{{ $title ?? "TAAP"}}</title>
 <meta name="title" content="{{ $title ?? 'TAAP'}}">
-<meta name="description" content="With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!">
+<meta name="description" content="{{ $description ?? 'We are a group of law students based at Duke University documenting instances where the Trump Administration may have violated the law. Accountability matters, and no one is above the law.' }}">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
