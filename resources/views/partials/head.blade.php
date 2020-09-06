@@ -39,7 +39,7 @@
 <meta property="twitter:url" content="{{ $report_url ?? config('env.APP_URL') }}"/>
 <meta property="twitter:title" content="{{ $title ?? 'TAAP'}}"/>
 <meta property="twitter:description" content="{{ $description ?? 'We are a group of law students based at Duke University documenting instances where the Trump Administration may have violated the law. Accountability matters, and no one is above the law.' }}"/>
-<meta property="twitter:image" content="{{ asset('img/TAAP_FullLogo.png') }}"/>
-<meta property="twitter:image:src" content="{{ asset('img/TAAP_FullLogo.png') }}"/>
+<meta property="twitter:image" content="{{ asset('img/TAAP_FullLogo.png') }}"/></meta>
+<meta property="twitter:image:src" content="{{ asset('img/TAAP_FullLogo.png') }}"/></meta>
 <!--https://cards-dev.twitter.com/validator-->
 </head>
