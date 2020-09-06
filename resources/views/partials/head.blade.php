@@ -21,9 +21,12 @@
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('trumbowyg/ui/trumbowyg.min.css') }}">
 <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+
 <!-- Twitter Meta data -->
-<meta name="twitter:title" content=" TAAP">
-<meta name="twitter:description" content=" {{ $description ?? 'Trump Administration Accountability Project' }}">
-<meta name="twitter:image" content=" http://df67js23.eastus.cloudapp.azure.com/img/TAAP_FullLogo.png">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@taap2020" />
+<meta name="twitter:title" content="TAAP" />
+<meta name="twitter:description" content="{{ $description ?? 'We are a group of law students based at Duke University documenting instances where the Trump Administration may have violated the law. Accountability matters, and no one is above the law.' }}" />
+<meta name="twitter:image" content="{{ asset('img/TAAP_FullLogo.png') }}" />
+
 </head>
