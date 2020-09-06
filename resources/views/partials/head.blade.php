@@ -23,7 +23,7 @@
 <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
 <!-- Twitter Meta data -->
 <meta name="twitter:title" content=" TAAP">
-<meta name="twitter:description" content=" {{ $description ? 'Trump Administration Accountability Project' }}">
+<meta name="twitter:description" content=" {{ $description ?? 'Trump Administration Accountability Project' }}">
 <meta name="twitter:image" content=" http://df67js23.eastus.cloudapp.azure.com/img/TAAP_FullLogo.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
