@@ -20,7 +20,7 @@
         </div>
     </div>
     <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
-        {{ csrf_field() }}
+        @csrf
     </form>
 </nav>
 <!--=== Header End ===-->

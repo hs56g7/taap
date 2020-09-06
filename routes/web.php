@@ -30,6 +30,8 @@ Route::resource('user', 'UserController')->middleware(['auth', 'twofactor'])->on
 
 Route::resource('featuredReport', 'FeaturedReportController')->middleware(['auth', 'twofactor'])->only('show');
 
+Route::resource('img', 'ImageController')->only('show');
+
 /**
  * Dev routes
  */
