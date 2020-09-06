@@ -28,7 +28,6 @@ class DownloadController extends Controller
             'Content-disposition'       => "attachment; filename='$title'",
         ];
 
-        // return response()->download($pdf_path, $title, $headers);
         return Storage::disk('azure')->download($pdf_path, $title, $headers);
     }
 }

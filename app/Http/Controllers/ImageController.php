@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Storage;
+
 class ImageController extends Controller
 {
     public function show(Request $request, $slug)
     {
         if($slug == "TAAP_FullLogo.png")
         {
+            $path = "TAAP_FullLogo.PNG";
+
             $title = "TAAP Logo";
 
             $headers = [
@@ -17,7 +21,7 @@ class ImageController extends Controller
                 'Content-disposition'       => "attachment; filename='$title'",
             ];
 
-            return response()->download('/var/www/public/img/TAAP_FullLogo.png', $title, $headers);
+            return Storage::disk('azure')->download($path, $title, $headers);
         }
 
         return redirect()->route('home');
