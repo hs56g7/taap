@@ -28,7 +28,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="{{ $report_url ?? config('env.APP_URL_SHORT') }}"/>
+<meta property="og:url" content="{{ $report_url ?? config('env.APP_URL') }}"/>
 <meta property="og:title" content="{{ $title ?? 'TAAP'}}"/>
 <meta property="og:description" content="{{ $description ?? 'We are a group of law students based at Duke University documenting instances where the Trump Administration may have violated the law. Accountability matters, and no one is above the law.' }}"/>
 <meta property="og:image" content="{{ asset('img/TAAP_FullLogo.png') }}"/>
@@ -36,7 +36,7 @@
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:site" content="@taap2020"/>
-<meta property="twitter:url" content="{{ $report_url ?? config('env.APP_URL_SHORT') }}"/>
+<meta property="twitter:url" content="{{ $report_url ?? config('env.APP_URL') }}"/>
 <meta property="twitter:title" content="{{ $title ?? 'TAAP'}}"/>
 <meta property="twitter:description" content="{{ $description ?? 'We are a group of law students based at Duke University documenting instances where the Trump Administration may have violated the law. Accountability matters, and no one is above the law.' }}"/>
 <meta property="twitter:image" content="{{ asset('img/TAAP_FullLogo.png') }}"/>

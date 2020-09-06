@@ -14,14 +14,9 @@ class ImageController extends Controller
         {
             $path = "TAAP_FullLogo.PNG";
 
-            $title = "TAAP Logo";
+            $logo = Storage::disk('azure')->get($path);
 
-            $headers = [
-                'Content-Type'              => 'image/png',
-                'Content-disposition'       => "attachment; filename='$title'",
-            ];
-
-            return Storage::disk('azure')->download($path, $title, $headers);
+            return response($logo, 200)->header('Content-Type', 'image/png');
         }
 
         return redirect()->route('home');
