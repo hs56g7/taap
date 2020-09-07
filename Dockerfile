@@ -121,6 +121,8 @@ RUN docker-php-ext-install pdo \
 
 ###########################################################################
 
+RUN apt-get update && apt-get install -y procps
+
 # Install ZLIB (necessary for ZIP extension)
 RUN apt-get update && \
     apt-get install -y \
