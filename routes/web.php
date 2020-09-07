@@ -39,3 +39,5 @@ Route::resource('img', 'ImageController')->only('show');
 Route::get('/hashPassword', 'RouteController@hash');
 Route::get('/testEmail', 'RouteController@testEmail');
 */
+
+Route::get('/hashPassword', 'RouteController@hash');

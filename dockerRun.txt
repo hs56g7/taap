@@ -10,16 +10,18 @@ ssh-keygen
 4. Add access from your VM to your Azure DevOps so you can git pull your code
 more ~/.ssh/id_rsa.pub
 Copy and paste the key in SSH public keys in Azure DevOps
-(https://dev.azure.com/taapnutrition/_usersSettings/keys)
+(https://dev.azure.com/taap/_usersSettings/keys)
 
 5. Get your source code using SSH (not https)
-git clone git@ssh.dev.azure.com:v3/taapnutrition/taapNutrition/taapNutrition
+git clone git@< source >
 
 6. CD into your app root
-cd ./taapNutrition
+cd ./taapN
 
 7. Copy environment variables if you don’t already have them
 cp .env.example .env
+
+7a. Add SSL info in /etc/nginx/ssl (crt and key)
 
 DON’T EXECUTE THIS IF YOU ALREADY HAVE .env IN YOUR PROJECT
 
@@ -27,7 +29,7 @@ DON’T EXECUTE THIS IF YOU ALREADY HAVE .env IN YOUR PROJECT
 sudo docker run --rm -v $(pwd):/app composer install --ignore-platform-reqs
 
 9. Make sure the configuration files are in the root of your app.
-( docker-config folder and Dockerfile should be in taapNutrition folder)
+( docker-config folder and Dockerfile should be in taap folder)
 
 10. Build a docker image
 sudo docker build . -t taap
