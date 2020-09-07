@@ -164,5 +164,5 @@ EXPOSE 80 443
 
 STOPSIGNAL SIGTERM
 
-CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisord.conf"]
+CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisord.conf", "--host=0.0.0.0"]
 
