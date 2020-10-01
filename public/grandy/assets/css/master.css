@@ -6577,7 +6577,7 @@ section.dark-block .pricing-box h4 {
     z-index: 2;
     height: 100%;
     opacity: 0;
-	visibility:hidden;
+	  visibility:hidden;
     top: 0;
     background-color: rgba(57, 73, 171, 0.9);
 }

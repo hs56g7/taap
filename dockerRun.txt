@@ -16,12 +16,14 @@ Copy and paste the key in SSH public keys in Azure DevOps
 git clone git@< source >
 
 6. CD into your app root
-cd ./taapN
+cd taap
 
 7. Copy environment variables if you don’t already have them
 cp .env.example .env
 
 7a. Add SSL info in /etc/nginx/ssl (crt and key)
+
+7b. Add/modify default.conf nginx config
 
 DON’T EXECUTE THIS IF YOU ALREADY HAVE .env IN YOUR PROJECT
 

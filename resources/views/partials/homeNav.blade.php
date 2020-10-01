@@ -23,6 +23,7 @@
                         @endforeach
                     </ul>
                 </li>
+                <li class="home-nav-margin"><a class="logo logo-scroll" href="{{ route('about.index') }}">About Us</a></li>
                 <li class="home-nav-margin"><a class="logo logo-scroll" href="{{ route('login') }}">Login</a></li>
             </ul>
         </div>
